@@ -9,6 +9,10 @@ export default {
       primary: "#3362CC",
       red: "#DE5753",
     },
+    fontFamily: {
+      heading: ['Signika Negative', 'sans-serif'], 
+      secondary: ['Raleway']
+    },
     extend: {},
   },
   plugins: [],
