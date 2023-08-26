@@ -11,7 +11,7 @@ const registerControllers = async(req, res) => {
         const password = req.body.password
         const salt = await bcrypt.genSalt(10)
         const hashedPassowrd = await bcrypt.hash(password,salt)
-        req,body.password = hashedPassowrd
+        req.body.password = hashedPassowrd
         const newUser = new userModel(req.body)
         await newUser.save();
         res.status(201).send({message:`Registered Successfully`, success: true})

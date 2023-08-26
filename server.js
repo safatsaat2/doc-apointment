@@ -1,5 +1,6 @@
 const express = require('express')
 const colors = require("colors")
+const cors = require('cors')
 const morgan = require("morgan")
 const dotenv = require("dotenv")
 const connectDb = require('./config/db')
@@ -13,12 +14,13 @@ connectDb();
 const app = express()
 
 // middlewares
+app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
 
 
 // routes
-app.use("/api/v1/user", require("./routes/usersRoutes"))
+app.use("/user", require("./routes/usersRoutes"))
 
 
 
