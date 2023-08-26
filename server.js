@@ -2,8 +2,11 @@ const express = require('express')
 const colors = require("colors")
 const morgan = require("morgan")
 const dotenv = require("dotenv")
+const connectDb = require('./config/db')
 
 dotenv.config()
+// MongoDb Connection 
+connectDb();
 
 // Rest Object
 
