@@ -18,6 +18,11 @@ app.use(morgan('dev'))
 
 
 // routes
+app.use("/api/v1/user", require("./routes/usersRoutes"))
+
+
+
+
 app.get('/', (req, res)=>{
     res.status(200).send({
         message: "Server is running",
