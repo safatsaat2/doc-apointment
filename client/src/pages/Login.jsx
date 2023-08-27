@@ -1,8 +1,12 @@
 
+import axios from "axios";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+
 
 const login = () => {
+
     const {
         register,
         handleSubmit,
@@ -10,9 +14,18 @@ const login = () => {
         formState: { errors },
     } = useForm();
 
+    const navigate = useNavigate();
 
-    const onSubmit = (data) => {
-        console.log(data)
+    const onSubmit = async(data) => {
+        const res = await axios.post("http://localhost:8080/user/login", data)
+        if(res.data.success){
+            localStorage.setItem("token", res.data.token)
+            alert("Login Successfully")
+                navigate('/')
+        }
+        else{
+            alert(res.data.message)
+        }
     }
     return (
         <div className="flex justify-between">
