@@ -25,6 +25,7 @@ const login = () => {
         }
         else{
             alert(res.data.message)
+            reset()
         }
     }
     return (
