@@ -27,10 +27,9 @@ const login = () => {
             alert("Login Successfully")
             navigate('/')
         }
+
         else {
-            
-            alert(res.data.message)
-            
+            alert(res.data.message) 
             reset()
         }
     }
@@ -40,6 +39,7 @@ const login = () => {
                 <h1 className="text-4xl text-primary font-bold">DOCAPP</h1>
                 <img src="https://i.ibb.co/zhcX4X9/Gut-health-rafiki-2.png" alt="" />
             </div>
+
             <div className="flex flex-col justify-center mx-auto">
                 <h1 className="text-6xl font-semibold font-heading ">Hi There!</h1>
                 <p className=" font-medium mt-4 font-secondary">Welcome to DOCAPP</p>
