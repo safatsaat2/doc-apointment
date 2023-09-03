@@ -1,11 +1,8 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"
-import { useDispatch } from "react-redux";
-import { hideLoading, showLoading } from "../Redux/Features/alerSlice";
 
 const Register = () => {
-    const dispatch = useDispatch()
     const {
         register,
         handleSubmit,
@@ -17,17 +14,17 @@ const Register = () => {
     const onSubmit = async(data) => {
         console.log(data)
         try {
-            dispatch(showLoading())
+            
             const res = await axios.post("http://localhost:8080/user/register", data)
-            dispatch(hideLoading())
+            
             if(res.data.success){
                 alert("Registered Successfully")
                 navigate('/')
             }
             else{
-                dispatch(showLoading())
+                
                 alert("Something went wrong")
-                dispatch(hideLoading())
+                
             }
         } catch (error) {
             console.log(error)

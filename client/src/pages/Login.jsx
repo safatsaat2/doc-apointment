@@ -1,14 +1,14 @@
-import { useDispatch } from "react-redux";
+
 
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { hideLoading, showLoading } from "../Redux/Features/alerSlice";
+
 
 
 const login = () => {
 
-    const dispatch = useDispatch()
+    
     const {
         register,
         handleSubmit,
@@ -19,18 +19,18 @@ const login = () => {
     const navigate = useNavigate();
 
     const onSubmit = async (data) => {
-        dispatch(showLoading())
+        
         const res = await axios.post("http://localhost:8080/user/login", data)
-        dispatch(hideLoading())
+        
         if (res.data.success) {
             localStorage.setItem("token", res.data.token)
             alert("Login Successfully")
             navigate('/')
         }
         else {
-            dispatch(showLoading())
+            
             alert(res.data.message)
-            dispatch(hideLoading())
+            
             reset()
         }
     }

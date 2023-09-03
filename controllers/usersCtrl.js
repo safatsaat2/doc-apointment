@@ -28,12 +28,12 @@ try {
     if(!user){
         res.status(200).send({message:"User Not Found", success: false})
     }
-    const isMatch = await bcrypt.compare(req.body.password, user.password)
+    const isMatch = await bcrypt.compare(req.body.password, user.password);
 
     if(!isMatch){
         res.status(200).send({message:"Invalid Email or Password", success: false})
     }
-    const token = jwt.sign({id:user._id},process.env.JWT_TOKEN, {expiresIn: "1d"})
+    const token = jwt.sign({id:user._id}, process.env.JWT_TOKEN, {expiresIn: "1d"})
     res.status(200).send({message:"Log IN Success", success: true, token})
 } catch (error) {
     console.log(error);
