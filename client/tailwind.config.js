@@ -8,6 +8,7 @@ export default {
     colors: {
       primary: "#3362CC",
       red: "#DE5753",
+      white: "#FFF",
     },
     fontFamily: {
       heading: ['Signika Negative', 'sans-serif'], 
