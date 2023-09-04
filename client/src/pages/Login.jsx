@@ -45,10 +45,10 @@ const login = () => {
                 <p className=" font-medium mt-4 font-secondary">Welcome to DOCAPP</p>
 
                 {/* FORM STARTS */}
-                <form className="text-white " onSubmit={handleSubmit(onSubmit)}>
+                <form className=" " onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control my-5">
                         <p className="label mb-4">
-                            <span className="label-text text-white">Email:</span>
+                            <span className="label-text ">Email:</span>
                         </p>
                         <input
                             type="email"
@@ -62,7 +62,7 @@ const login = () => {
                     </div>
                     <div className="form-control">
                         <p className="label mb-4">
-                            <span className="label-text text-white">Password</span>
+                            <span className="label-text ">Password:</span>
                         </p>
                         <input
                             type="password"
